@@ -1,0 +1,65 @@
+body{
+    background-image: url("planoDeFundo.jpg");
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.estrutura-livros{
+    background-color: rgba(119, 19, 19, 0.8);
+    height: auto;
+    width: 50rem;
+    margin: 50px auto;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.informacoes-livros{
+    text-align: left;
+    padding: 10px auto 10px auto;
+    margin: 20px;
+}
+
+button{
+    cursor: pointer;
+}
+.botao-alugar-livro{
+    width: 10rem;
+    height: 5rem;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+}
+
+a{
+    color: white
+}
+
+.estrutura-categorias{
+    display: flex;
+    background-color: rgba(119, 19, 19, 0.8);
+    height: auto;
+    width: auto;
+    margin: 50px auto;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+button, img{
+    width: 15rem;
+    height: 22rem;
+}
+
+#cabecalho-categorias{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: rgba(119, 19, 19, 0.8);
+    width: 20rem;
+    height: 5rem;
+    color: white;
+    justify-content: center;
+    margin: auto;
+}   
+
