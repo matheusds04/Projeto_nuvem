@@ -1,22 +1,25 @@
 const urlParams = new URLSearchParams(window.location.search);
 const genero = urlParams.get("genero") 
 
-function CriarBox(titulo_res, autor_res, genero_res, id_res){
+function CriarBox(titulo_res, autor_res, genero_res, id_res, url_imagem){
     var a = document.createElement('a')
     var div = document.createElement('div')
     var titulo = document.createElement('p')
     var autor = document.createElement('p')
     var genero = document.createElement('p')
-    var id = 
+    var imagem = document.createElement('img')
+    div.appendChild(imagem) 
     div.appendChild(titulo)
     div.appendChild(autor)
     div.appendChild(genero)
     a.appendChild(div)
     a.setAttribute("href", `livro.html?id=${id_res}`)
+    imagem.setAttribute("src", url_imagem)
     titulo.innerHTML = titulo_res
     autor.innerHTML = autor_res
     genero.innerHTML = genero_res
     div.classList.add("box-livro")
+    imagem.classList.add("capa-livro")
     return a
 }
 
@@ -28,12 +31,13 @@ function renderizarBox(responseJSON){
         var autor = livro.autor
         var genero = livro.genero
         var id = livro._id
-        section.appendChild(CriarBox(titulo,autor,genero,id))
+        var url_imagem = livro.url
+        section.appendChild(CriarBox(titulo,autor,genero,id, url_imagem))
     }); 
 }
 
 async function BuscarLivroPorGenero(){
-    await fetch(`https://api-nuvem.herokuapp.com/v1/livros/generos/${genero}`)
+    await fetch(`https://api-nuvem.herokuapp.com/v1/livros/genero/${genero}`)
         .then(response => response.json()) // retorna uma promise
         .then(result => {
             renderizarBox(result)
@@ -42,3 +46,4 @@ async function BuscarLivroPorGenero(){
         // trata se alguma das promises falhar
         console.error('Failed retrieving information', err)})
 }
+window.onload = BuscarLivroPorGenero();

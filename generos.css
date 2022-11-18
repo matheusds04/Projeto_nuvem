@@ -23,6 +23,14 @@ a{
     font-family: 'Sono', sans-serif;
     font-size: 1.3rem;
 }
+a:link {
+    color: rgb(255, 255, 255);
+ }
+ 
+ /* link que foi visitado */
+ a:visited {
+     color: rgb(255, 255, 255);
+ }
 h1{
     font-family: 'Pacifico', cursive;
 }

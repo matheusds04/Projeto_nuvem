@@ -23,6 +23,14 @@ a{
     font-family: 'Sono', sans-serif;
     font-size: 1.3rem;
 }
+a:link {
+    color: rgb(255, 255, 255);
+ }
+ 
+ /* link que foi visitado */
+ a:visited {
+     color: rgb(255, 255, 255);
+ }
 h1{
     font-family: 'Pacifico', cursive;
 }
@@ -36,18 +44,22 @@ main{
 }
 
 
-
+.capa-livro{
+    width: 30vw;
+    height: 70vh;
+    border-radius: 10px;
+}
 
 
 .box-livro{
+    gap: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: fit-content;
     height: fit-content;
-    padding: 1vh 1vw;
-    padding: 2vh 1vh;
+    padding: 3vh 4vw;
     background: rgba(209, 209, 209, 0.45);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4.5px );

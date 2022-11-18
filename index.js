@@ -1,19 +1,22 @@
-function CriarBox(titulo_res, autor_res, genero_res, id_res){
+function CriarBox(titulo_res, autor_res, genero_res, id_res, url_res){
     var a = document.createElement('a')
+    var imagem = document.createElement('img')
     var div = document.createElement('div')
     var titulo = document.createElement('p')
     var autor = document.createElement('p')
     var genero = document.createElement('p')
-    var id = 
+    div.appendChild(imagem)
     div.appendChild(titulo)
     div.appendChild(autor)
     div.appendChild(genero)
     a.appendChild(div)
     a.setAttribute("href", `livro.html?id=${id_res}`)
+    imagem.setAttribute("src", url_res)
     titulo.innerHTML = titulo_res
     autor.innerHTML = autor_res
     genero.innerHTML = genero_res
     div.classList.add("box-livro")
+    imagem.classList.add("capa-livro")
     return a
 }
 function renderizarBox(responseJSON){
@@ -24,7 +27,8 @@ function renderizarBox(responseJSON){
         var autor = livro.autor
         var genero = livro.genero
         var id = livro._id
-        section.appendChild(CriarBox(titulo,autor,genero,id))
+        var url_imagem = livro.url
+        section.appendChild(CriarBox(titulo,autor,genero,id, url_imagem))
     }); 
 }
 async function buscarLivros(){
