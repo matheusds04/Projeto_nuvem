@@ -11,23 +11,23 @@
 <body>
     <header>
         <a href="index.html">Início</a>
-        <a>Login</a>
+        <a href="login.html">Login</a>
         <h1>WikiLivros</h1>
         <a href="generos.html">Genêros</a>
         <a href="publicarlivro.html">Publicar Livro</a>
     </header>
     <main>
         <form onsubmit="CadastrarLivro()">
-            <input type="text" id="titulo" placeholder="Titulo">
-            <input type="text" id="autor" placeholder="Autor">
-            <input type="text" id="numPaginas" placeholder="Número de Páginas">
+            <input type="text" id="titulo" placeholder="Titulo" required>
+            <input type="text" id="autor" placeholder="Autor" required> 
+            <input type="text" id="numPaginas" placeholder="Número de Páginas" required>
             <select id="genero">
                 <option value="romance">Romance</option>
                 <option value="aventura">Aventura</option>
                 <option value="drama">Drama</option>
                 <option value="ficcao">Ficção</option>
             </select>
-            <input type="text" id="url" placeholder="URL da capa">
+            <input type="text" id="url" placeholder="URL da capa" required>
             <button>Cadastrar</button>
         </form>
     </main>
